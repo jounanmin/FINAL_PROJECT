@@ -26,6 +26,7 @@ export const Layout = () => {
 						<Route path="/favorites" />
 						<Route path="/details" />
 						<Route path="/profile" />
+						<Route path="/editprofile" />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
