@@ -1,10 +1,28 @@
 import React, { Component } from "react";
+import "../../styles/home.scss";
 
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
+	<div>
+		<div className="card text-center">
+			<div className="card-header">
+				<ul className="nav nav-pills card-header-pills">
+					<li className="nav-item">
+						<a className="nav-link" href="#">
+							Search
+						</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link" href="#">
+							Favs
+						</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link" href="#">
+							Filter
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 );
