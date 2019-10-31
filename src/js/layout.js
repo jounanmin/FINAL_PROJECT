@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import Favorites from "./views/Favorites.js";
+import Details from "./views/Details.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,7 +26,7 @@ export const Layout = () => {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/favorites" component={Favorites} />
-						<Route path="/details" />
+						<Route path="/details" component={Details} />
 						<Route path="/profile" />
 						<Route path="/editprofile" />
 						<Route path="/single/:theid" component={Single} />
