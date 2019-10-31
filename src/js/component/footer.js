@@ -7,19 +7,13 @@ export const Footer = () => (
 			<div className="card-header">
 				<ul className="nav nav-pills card-header-pills">
 					<li className="nav-item">
-						<a className="nav-link" href="#">
-							Search
-						</a>
+						<a className="nav-link fas fa-search" href="#" />
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#">
-							Favs
-						</a>
+						<a className="nav-link fas fa-paw" href="#" />
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#">
-							Filter
-						</a>
+						<a className="nav-link fas fa-map-pin" href="#" />
 					</li>
 				</ul>
 			</div>
