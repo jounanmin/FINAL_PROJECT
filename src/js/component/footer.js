@@ -3,7 +3,7 @@ import "../../styles/home.scss";
 
 export const Footer = () => (
 	<div>
-		<div className="card text-center">
+		<div className="card text-center fixed-bottom bg-light">
 			<div className="card-header">
 				<ul className="nav nav-pills card-header-pills d-flex justify-content-center">
 					<li className="nav-item">

@@ -1,6 +1,13 @@
 /*
     General Styles
 */
+.navbar{
+
+}
+body{
+
+
+}
 .favoritecard{
     margin-left: auto;
     margin-right: auto;
@@ -24,4 +31,25 @@
 }
 .detailstext{
     padding: 5px;
+}
+.profile{
+    padding: 15px;
+}
+.profileimagediv{
+    margin: auto;
+    margin-right: auto;
+}
+.profileimage{
+    height: 100%;
+    width: 70%;
+    //margin: auto;
+    border-radius: 75%;
+}
+.profileuserdiv{
+    //margin: auto
+}
+.editProfilecard{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }

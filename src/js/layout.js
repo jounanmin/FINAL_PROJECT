@@ -7,6 +7,8 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import Favorites from "./views/Favorites.js";
 import Details from "./views/Details.js";
+import Profile from "./views/Profile.js";
+import EditProfile from "./views/EditProfile.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -27,8 +29,8 @@ export const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route path="/favorites" component={Favorites} />
 						<Route path="/details" component={Details} />
-						<Route path="/profile" />
-						<Route path="/editprofile" />
+						<Route path="/profile" component={Profile} />
+						<Route path="/editprofile" component={EditProfile} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
