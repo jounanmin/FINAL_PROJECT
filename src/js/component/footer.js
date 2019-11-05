@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../styles/home.scss";
+import { Link } from "react-router-dom";
 
 export const Footer = () => (
 	<div className="card text-center fixed-bottom bg-light">
@@ -8,9 +9,11 @@ export const Footer = () => (
 				<li className="nav-item">
 					<a className="nav-link fas fa-search" href="#" />
 				</li>
-				<li className="nav-item">
-					<a className="nav-link fas fa-paw" href="#" />
-				</li>
+				<Link to="/favorites">
+					<li className="nav-item">
+						<a className="nav-link fas fa-paw" href="#" />
+					</li>
+				</Link>
 				<li className="nav-item">
 					<a className="nav-link fas fa-map-pin" href="#" />
 				</li>

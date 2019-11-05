@@ -8,11 +8,6 @@ export const Navbar = () => {
 				<div className="navbar-brand">Venture Hound</div>
 			</Link>
 			<div>
-				<Link to="/favorites">
-					<button type="button" className="btn btn-primary">
-						Favorites
-					</button>
-				</Link>
 				<Link to="/details">
 					<button type="button" className="btn btn-primary">
 						Details
