@@ -7,18 +7,6 @@ export const Navbar = () => {
 			<Link to="/">
 				<div className="navbar-brand">Venture Hound</div>
 			</Link>
-			<div>
-				<Link to="/profile">
-					<button type="button" className="btn btn-primary">
-						Profile
-					</button>
-				</Link>
-				<Link to="/editprofile">
-					<button type="button" className="btn btn-primary">
-						Edit Profile
-					</button>
-				</Link>
-			</div>
 
 			<div className="Login">
 				<Link to="/login">

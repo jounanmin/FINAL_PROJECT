@@ -15,7 +15,13 @@ export const Footer = () => (
 					</li>
 				</Link>
 				<li className="nav-item">
-					<a className="nav-link fas fa-map-pin" href="#" />
+					<a
+						className="nav-link fas fa-map-pin "
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+						href="#"
+					/>
 				</li>
 			</ul>
 		</div>
