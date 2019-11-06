@@ -57,6 +57,13 @@ export default class Details extends React.Component {
 					<div className="detailstext">
 						<h3>Place Name</h3>
 						<h6>Details</h6>
+						<h4>
+							<span className="fa fa-star checked" />
+							<span className="fa fa-star checked" />
+							<span className="fa fa-star checked" />
+							<span className="fa fa-star checked" />
+							<span className="fa fa-star checked" />
+						</h4>
 					</div>
 				</div>
 			</div>

@@ -8,11 +8,6 @@ export const Navbar = () => {
 				<div className="navbar-brand">Venture Hound</div>
 			</Link>
 			<div>
-				<Link to="/details">
-					<button type="button" className="btn btn-primary">
-						Details
-					</button>
-				</Link>
 				<Link to="/profile">
 					<button type="button" className="btn btn-primary">
 						Profile
@@ -24,14 +19,18 @@ export const Navbar = () => {
 					</button>
 				</Link>
 			</div>
-			<div className="Login">
-				<button type="button" className="btn btn-primary" data-toggle="modal" data-target="loginModal">
-					Login
-				</button>
 
-				<button type="button" className="btn btn-secondary">
-					Sign Up
-				</button>
+			<div className="Login">
+				<Link to="/login">
+					<button type="button" className="btn btn-primary" data-toggle="modal" data-target="loginModal">
+						Login
+					</button>
+				</Link>
+				<Link to="/register">
+					<button type="button" className="btn btn-secondary">
+						Sign Up
+					</button>
+				</Link>
 			</div>
 		</nav>
 	);
