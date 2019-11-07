@@ -6,8 +6,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "Impala Hotel",
                     placeid: "hotel1",
                     fenced: "no",
+                    location:[{
                     lat: 25.783416,
 					lng: -80.1336388,
+                    }],
+
 					background: "white",
 					initial: "white",
 					places: [
@@ -27,8 +30,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "The St. Regis Bal Harbour Resort",
                     placeid: "hotel2",
                     fenced: "yes",
-                    lat: 25.8888332,
-					lng: -80.124721,
+                    location: [{
+                      lat: 25.8888332,
+					lng: -80.124721
+                    }],
+
 					background: "white",
 					initial: "white",
 					places: [
