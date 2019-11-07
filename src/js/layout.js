@@ -7,8 +7,12 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import Favorites from "./views/Favorites.js";
 import Details from "./views/Details.js";
+
 import Profile from "./views/Profile.js";
 import EditProfile from "./views/EditProfile.js";
+import Login from "./views/Login.js";
+import Registration from "./views/Registration.js";
+import Ratings from "./views/Ratings.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -30,7 +34,11 @@ export const Layout = () => {
 						<Route path="/favorites" component={Favorites} />
 						<Route path="/details" component={Details} />
 						<Route path="/profile" component={Profile} />
+
 						<Route path="/editprofile" component={EditProfile} />
+						<Route path="/login" component={Login} />
+						<Route path="/register" component={Registration} />
+						<Route path="/ratings" component={Ratings} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>

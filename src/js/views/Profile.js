@@ -1,6 +1,7 @@
 import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
+import { Link } from "react-router-dom";
 
 export default class Profile extends React.Component {
 	constructor() {
@@ -18,13 +19,17 @@ export default class Profile extends React.Component {
 					</div>
 					<div className="col-md-3 col-sm-12 profileuserdiv">
 						<h2>User Name</h2>
-
-						<button type="button" className="btn btn-secondary">
-							Edit
-						</button>
+						<Link to="/editprofile">
+							<button type="button" className="btn btn-secondary">
+								Edit
+							</button>
+						</Link>
 					</div>
 					<div className="col-md-6 col-sm-12">
-						<h3>User Information and Ratings</h3>
+						<h3>User Information</h3>
+						<Link to="/ratings">
+							<h4>Ratings</h4>
+						</Link>
 					</div>
 				</div>
 			</div>

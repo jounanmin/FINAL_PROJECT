@@ -6,49 +6,63 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "Impala Hotel",
 					background: "white",
 					initial: "white",
-                    places:[{
-                        name: "Impala Hotel,",
-                        address: "1228 Collins Ave, Miami Beach, FL, 33139, United States of America",
-                        ratings: [{
-                            userid: "doglover1",
-                            value: "3"
-
-                        }]
-
-                    }]
+					places: [
+						{
+							name: "Impala Hotel,",
+							address: "1228 Collins Ave, Miami Beach, FL, 33139, United States of America",
+							ratings: [
+								{
+									userid: "doglover1",
+									value: "3"
+								}
+							]
+						}
+					]
 				},
 				{
 					title: "The St. Regis Bal Harbour Resort",
 					background: "white",
 					initial: "white",
-                    places:[{
-                        name: "The St. Regis Bal Harbour Resort",
-                        address: "9703 Collins Avenue, Bal Harbour, FL, 33154, United States of America",
-                        ratings: [{
-                            userid: "doglover2",
-                            value: "4"
-
-                        }]
-
-                    }]
+					places: [
+						{
+							name: "The St. Regis Bal Harbour Resort",
+							address: "9703 Collins Avenue, Bal Harbour, FL, 33154, United States of America",
+							ratings: [
+								{
+									userid: "doglover2",
+									value: "4"
+								}
+							]
+						}
+					]
+				}
+			],
+			rating: [
+				{
+					ratings: [
+						{
+							placeid: "hotel1",
+							ratings: [
+								{
+									placeid: "#",
+									value: 3
+								}
+							]
+						}
+					],
+					ratings2: [
+						{
+							placeid: "hotel2",
+							ratings: [
+								{
+									placeid: "#",
+									value: 4
+								}
+							]
+						}
+					]
 				}
 			]
-            user: {
-					ratings: [{
-                        placeid: "hotel1",
-                        ratings:[{
-                            placeid:"#",
-                            value: 3
-                            }]
-                    }]
-                    ratings2: [{
-                        placeid: "hotel2",
-                        ratings:[{
-                            placeid:"#",
-                            value: 4
-                            }]
-                    }]
-				},
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
