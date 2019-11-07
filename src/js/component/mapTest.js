@@ -17,8 +17,8 @@ export class MapTest extends React.Component {
 					}}
 					zoom={7}
 					center={{
-						lat: -3.745,
-						lng: -38.523
+						lat: 25.7740503,
+						lng: -80.1971402
 					}}>
 					...Your map components
 				</GoogleMap>
