@@ -22,8 +22,9 @@ export default class Login extends React.Component {
 							<p>Password</p>
 							<input />
 							<p> </p>
+
 							<a href="#" className="btn btn-primary">
-								Update Information
+								Login
 							</a>
 						</div>
 					</div>
