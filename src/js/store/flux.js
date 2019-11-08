@@ -4,12 +4,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			locations: [
 				{
 					title: "Impala Hotel",
-                    placeid: "hotel1",
-                    fenced: "no",
-                    location:[{
-                    lat: 25.783416,
-					lng: -80.1336388,
-                    }],
+					placeid: "hotel1",
+					fenced: "no",
+					location: [
+						{
+							lat: 25.783416,
+							lng: -80.1336388
+						}
+					],
 
 					background: "white",
 					initial: "white",
@@ -28,12 +30,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					title: "The St. Regis Bal Harbour Resort",
-                    placeid: "hotel2",
-                    fenced: "yes",
-                    location: [{
-                      lat: 25.8888332,
-					lng: -80.124721
-                    }],
+					placeid: "hotel2",
+					fenced: "yes",
+					location: [
+						{
+							lat: 25.8888332,
+							lng: -80.124721
+						}
+					],
 
 					background: "white",
 					initial: "white",
@@ -56,10 +60,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					user1: [
 						{
 							userid: "doglover1",
-                            image: "#",
-                            dogtype: "terrier",
-                            email: "doglover1@gmail.com",
-
+							image: "#",
+							dogtype: "terrier",
+							email: "doglover1@gmail.com",
 
 							ratings: [
 								{
@@ -72,9 +75,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					user2: [
 						{
 							userid: "doglover2",
-                            image: "#",
-                            dogtype: "bulldog",
-                            email: "doglover2@gmail.com",
+							image: "#",
+							dogtype: "bulldog",
+							email: "doglover2@gmail.com",
 							ratings: [
 								{
 									placeid: "#",
