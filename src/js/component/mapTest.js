@@ -27,7 +27,16 @@ export class MapTest extends React.Component {
 						}}>
 						{clusterer =>
 							[{ lat: 25.783416, lng: -80.1336388 }, { lat: 25.8888332, lng: -80.124721 }].map(
-								(location, i) => <Marker key={i} position={location} clusterer={clusterer} />
+								(location, i) => (
+									<Marker
+										onClick={Cluster => {
+											console.log("smart");
+										}}
+										key={i}
+										position={location}
+										clusterer={clusterer}
+									/>
+								)
 							)
 						}
 					</MarkerClusterer>
