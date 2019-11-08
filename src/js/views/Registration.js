@@ -25,9 +25,11 @@ export default class Registration extends React.Component {
 							<p>Username</p>
 							<input />
 							<p> </p>
-							<a href="#" className="btn btn-primary">
-								Update Information
-							</a>
+							<Link to="/profile" className>
+								<a href="#" className="btn btn-primary">
+									Save
+								</a>
+							</Link>
 						</div>
 					</div>
 				</div>

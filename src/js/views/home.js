@@ -4,15 +4,19 @@ import "../../styles/home.scss";
 import { Card } from "../component/Card.js";
 import { MapTest } from "../component/mapTest.js";
 
-export const Home = () => (
-	<div className="container">
-		<div className="map">
-			<h1>map</h1>
-			<MapTest />
-		</div>
-
-		<div className="cardDetails">
-			<Card />
-		</div>
-	</div>
-);
+export default class Home extends React.Component {
+	render() {
+		return (
+			<div className="container">
+				<div className="row">
+					<div className="map col-md-12">
+						<MapTest />
+					</div>
+				</div>
+				<div className="cardDetails">
+					<Card />
+				</div>
+			</div>
+		);
+	}
+}

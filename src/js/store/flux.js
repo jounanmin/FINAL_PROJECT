@@ -1,7 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+<<<<<<< HEAD
+			places: [
+=======
 			locations: [
+>>>>>>> a0257d20b3b327e170878bc02e5415f7281e9876
 				{
 					title: "Impala Hotel",
 					placeid: "hotel1",
@@ -89,6 +93,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			]
 		},
+
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
