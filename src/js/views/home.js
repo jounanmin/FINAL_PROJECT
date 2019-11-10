@@ -7,15 +7,13 @@ import { MapTest } from "../component/mapTest.js";
 export default class Home extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container-fluid">
 				<div className="row">
 					<div className="map col-md-12">
 						<MapTest />
 					</div>
 				</div>
-				<div className="cardDetails">
-					<Card />
-				</div>
+				<div className="cardDetails" />
 			</div>
 		);
 	}

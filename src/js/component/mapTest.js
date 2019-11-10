@@ -12,10 +12,10 @@ export class MapTest extends React.Component {
 				<GoogleMap
 					id="circle-example"
 					mapContainerStyle={{
-						height: "400px",
-						width: "800px"
+						height: "675px",
+						width: "100%"
 					}}
-					zoom={7}
+					zoom={14}
 					center={{
 						lat: 25.7740503,
 						lng: -80.1971402
