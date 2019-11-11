@@ -94,8 +94,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 
 		actions: {
-			loginUser: (username, password) => {
-				if (store.users.username.password === password) {
+			loginUser: (username, pword) => {
+				const store = getStore();
+				let temp = store.users;
+				let temp2 = username;
+				if (temp.temp2.password === pword) {
 					setStore({ loggedInUser: store.users.username });
 					console.log(store.loggedInUser);
 				}

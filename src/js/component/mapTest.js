@@ -1,5 +1,6 @@
 import React from "react";
 import { GoogleMap, LoadScript, MarkerClusterer, Marker } from "@react-google-maps/api";
+import { Consumer } from "../store/appContext";
 
 export class MapTest extends React.Component {
 	render() {
@@ -30,7 +31,7 @@ export class MapTest extends React.Component {
 								(location, i) => (
 									<Marker
 										onClick={Cluster => {
-											console.log("smart");
+											console.log("smart", location);
 										}}
 										key={i}
 										position={location}
