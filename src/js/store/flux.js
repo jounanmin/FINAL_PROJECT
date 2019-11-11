@@ -57,9 +57,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			users: [
 				{
-					user1: [
+					doglover1: [
 						{
 							userid: "doglover1",
+							password: "alpha",
 							image: "#",
 							dogtype: "terrier",
 							email: "doglover1@gmail.com",
@@ -72,9 +73,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 							]
 						}
 					],
-					user2: [
+					doglover2: [
 						{
 							userid: "doglover2",
+							password: "bravo",
 							image: "#",
 							dogtype: "bulldog",
 							email: "doglover2@gmail.com",
@@ -87,32 +89,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					]
 				}
-			]
+			],
+			loggedInUser: []
 		},
 
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			loginUser: (username, password) => {
+				if (store.users.username.password === password) {
+					setStore({ loggedInUser: store.users.username });
+					console.log(store.loggedInUser);
+				}
 			}
 		}
 	};
