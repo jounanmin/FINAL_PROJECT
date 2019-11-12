@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleMap, LoadScript, MarkerClusterer, Marker } from "@react-google-maps/api";
 import { Consumer } from "../store/appContext";
+import { Context } from "../store/appContext";
 
 export class MapTest extends React.Component {
 	render() {
@@ -21,26 +22,33 @@ export class MapTest extends React.Component {
 						lat: 25.7740503,
 						lng: -80.1971402
 					}}>
-					<MarkerClusterer
-						options={{
-							imagePath:
-								"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
-						}}>
-						{clusterer =>
-							[{ lat: 25.783416, lng: -80.1336388 }, { lat: 25.8888332, lng: -80.124721 }].map(
-								(location, i) => (
-									<Marker
-										onClick={Cluster => {
-											console.log("smart", location);
-										}}
-										key={i}
-										position={location}
-										clusterer={clusterer}
-									/>
-								)
-							)
-						}
-					</MarkerClusterer>
+					<Context.Consumer>
+						{({ store, actions }) => {
+							return (
+								<MarkerClusterer
+									options={{
+										imagePath:
+											"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
+									}}>
+									{clusterer =>
+										[
+											{ lat: 25.783416, lng: -80.1336388 },
+											{ lat: 25.8888332, lng: -80.124721 }
+										].map((location, i) => (
+											<Marker
+												onClick={Cluster => {
+													console.log("smart", location);
+												}}
+												key={i}
+												position={location}
+												clusterer={clusterer}
+											/>
+										))
+									}
+								</MarkerClusterer>
+							);
+						}}
+					</Context.Consumer>
 					...Your map components
 				</GoogleMap>
 			</LoadScript>

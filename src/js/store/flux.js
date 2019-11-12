@@ -96,12 +96,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			loginUser: (username, pword) => {
 				const store = getStore();
-				let temp = store.users;
-				let temp2 = username;
-				if (temp.temp2.password === pword) {
-					setStore({ loggedInUser: store.users.username });
-					console.log(store.loggedInUser);
-				}
+				let temp = [];
+				store.users.filter((name, index) => {
+					if (name === username && store.users[index].password === pword) {
+						temp.push(store.users[index]);
+						console.log("right password");
+					} else {
+						console.log("Wrong username/password");
+					}
+				});
+				setStore({ loggedInUser: temp });
 			}
 		}
 	};
