@@ -32,14 +32,14 @@ export const Layout = () => {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/favorites" component={Favorites} />
-						<Route path="/details" component={Details} />
+						<Route path="/details/:theid" component={Details} />
 						<Route path="/profile" component={Profile} />
 
 						<Route path="/editprofile" component={EditProfile} />
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Registration} />
 						<Route path="/ratings" component={Ratings} />
-						<Route path="/single/:theid" component={Single} />
+						<Route path="/single/" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

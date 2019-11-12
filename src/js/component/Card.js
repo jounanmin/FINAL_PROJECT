@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const Card = props => (
 	<div className="container">
 		<div className="jumbotron row">
-			<Link to="/details">
+			<Link to={`/details/${props.id}`}>
 				<div
 					id="carouselExampleControls"
 					className="carousel slide col-md-5 detailscarosuel"
@@ -63,5 +63,6 @@ export const Card = props => (
 
 Card.propTypes = {
 	location: PropTypes.string,
-	address: PropTypes.string
+	address: PropTypes.string,
+	id: PropTypes.number
 };

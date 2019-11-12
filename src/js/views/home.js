@@ -51,11 +51,8 @@ export default class Home extends React.Component {
 														return name.location.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
-																	console.log("smart", name);
 																	this.setState({ showmodal: true });
-																	console.log(this.state.showmodal);
 																	this.setState({ details: name });
-																	console.log(this.state.details);
 																}}
 																key={i}
 																position={location}
@@ -77,6 +74,7 @@ export default class Home extends React.Component {
 							onclick={console.log(this.state.showmodal)}
 							location={this.state.details.title}
 							address={this.state.details.address}
+							id={this.state.details.id}
 						/>
 					</div>
 				</div>

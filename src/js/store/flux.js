@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					address: "1228 Collins Ave, Miami Beach, FL, 33139",
 					placeid: "hotel1",
 					fenced: "no",
+					id: 0,
 					location: [
 						{
 							lat: 25.783416,
@@ -33,6 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "The St. Regis Bal Harbour Resort",
 					placeid: "hotel2",
 					fenced: "yes",
+					id: 1,
 					location: [
 						{
 							lat: 25.8888332,
