@@ -90,7 +90,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					]
 				}
 			],
-			loggedInUser: []
+			loggedInUser: [],
+			modal: false
 		},
 
 		actions: {
