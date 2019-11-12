@@ -13,6 +13,17 @@ body{
     height:100%;
     padding: 0px;
 }
+.basicdetails{
+    position: absolute;
+    bottom: 6%;
+    z-index: 3;
+}
+#hide{
+    visibility: hidden;
+}
+#show{
+    visibility: visible;
+}
 .favoritecard{
     margin-left: auto;
     margin-right: auto;

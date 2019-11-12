@@ -3,17 +3,83 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Card } from "../component/Card.js";
 import { MapTest } from "../component/mapTest.js";
+import { GoogleMap, LoadScript, MarkerClusterer, Marker } from "@react-google-maps/api";
+import { Consumer } from "../store/appContext";
+import { Context } from "../store/appContext";
 
 export default class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			showmodal: false,
+			details: []
+		};
+	}
 	render() {
+		let alpha = "hide";
+		if (this.state.showmodal === true) alpha = "show";
 		return (
 			<div className="container-fluid">
 				<div className="row">
 					<div className="map col-md-12">
-						<MapTest />
+						<LoadScript
+							id="script-loader"
+							googleMapsApiKey="AIzaSyAPbZ3EPs3SxgQcrxmpO31bc8drIY7Ikeo"
+							// {...other this.props}
+						>
+							<GoogleMap
+								id="circle-example"
+								mapContainerStyle={{
+									height: "675px",
+									width: "100%"
+								}}
+								zoom={13}
+								center={{
+									lat: 25.803516,
+									lng: -80.1336388
+								}}>
+								<Context.Consumer>
+									{({ store, actions }) => {
+										return (
+											<MarkerClusterer
+												options={{
+													imagePath:
+														"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
+												}}>
+												{clusterer =>
+													store.locations.map((name, index) => {
+														return name.location.map((location, i) => (
+															<Marker
+																onClick={Cluster => {
+																	console.log("smart", name);
+																	this.setState({ showmodal: true });
+																	console.log(this.state.showmodal);
+																	this.setState({ details: name });
+																	console.log(this.state.details);
+																}}
+																key={i}
+																position={location}
+																clusterer={clusterer}
+															/>
+														));
+													})
+												}
+											</MarkerClusterer>
+										);
+									}}
+								</Context.Consumer>
+								...Your map components
+							</GoogleMap>
+						</LoadScript>
+					</div>
+					<div className="basicdetails col-md-12 col-sm-12" id={alpha}>
+						<Card
+							onclick={console.log(this.state.showmodal)}
+							location={this.state.details.title}
+							address={this.state.details.address}
+						/>
 					</div>
 				</div>
-				<div className="cardDetails" />
 			</div>
 		);
 	}

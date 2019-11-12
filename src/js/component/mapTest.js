@@ -17,10 +17,10 @@ export class MapTest extends React.Component {
 						height: "675px",
 						width: "100%"
 					}}
-					zoom={14}
+					zoom={13}
 					center={{
-						lat: 25.7740503,
-						lng: -80.1971402
+						lat: 25.803516,
+						lng: -80.1336388
 					}}>
 					<Context.Consumer>
 						{({ store, actions }) => {
@@ -35,7 +35,7 @@ export class MapTest extends React.Component {
 											return name.location.map((location, i) => (
 												<Marker
 													onClick={Cluster => {
-														console.log("smart", store.locations[i]);
+														console.log("smart", name);
 													}}
 													key={i}
 													position={location}

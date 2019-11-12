@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			locations: [
 				{
 					title: "Impala Hotel",
+					address: "1228 Collins Ave, Miami Beach, FL, 33139",
 					placeid: "hotel1",
 					fenced: "no",
 					location: [
@@ -18,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					places: [
 						{
 							name: "Impala Hotel,",
-							address: "1228 Collins Ave, Miami Beach, FL, 33139, United States of America",
+							address: "1228 Collins Ave, Miami Beach, FL, 33139",
 							ratings: [
 								{
 									userid: "doglover1",
@@ -41,10 +42,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					background: "white",
 					initial: "white",
+					address: "9703 Collins Avenue, Bal Harbour, FL, 33154",
 					places: [
 						{
 							name: "The St. Regis Bal Harbour Resort",
-							address: "9703 Collins Avenue, Bal Harbour, FL, 33154, United States of America",
+							address: "9703 Collins Avenue, Bal Harbour, FL, 33154",
 							ratings: [
 								{
 									userid: "doglover2",

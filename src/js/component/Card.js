@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Consumer } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-export const Card = () => (
+export const Card = props => (
 	<div className="container">
 		<div className="jumbotron row">
 			<Link to="/details">
@@ -54,9 +54,14 @@ export const Card = () => (
 				</div>
 			</Link>
 			<div className="detailstext">
-				<h3>Place Name</h3>
-				<h6>Details</h6>
+				<h3>{props.location}</h3>
+				<h6>{props.address}</h6>
 			</div>
 		</div>
 	</div>
 );
+
+Card.propTypes = {
+	location: PropTypes.string,
+	address: PropTypes.string
+};
