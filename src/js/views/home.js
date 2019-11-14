@@ -71,7 +71,6 @@ export default class Home extends React.Component {
 					</div>
 					<div className="basicdetails col-md-12 col-sm-12" id={alpha}>
 						<Card
-							onclick={console.log(this.state.showmodal)}
 							location={this.state.details.title}
 							address={this.state.details.address}
 							id={this.state.details.id}

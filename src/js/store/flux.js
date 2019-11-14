@@ -59,37 +59,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 					]
 				}
 			],
+
 			users: [
 				{
-					doglover1: [
-						{
-							userid: "doglover1",
-							password: "alpha",
-							image: "#",
-							dogtype: "terrier",
-							email: "doglover1@gmail.com",
+					userid: "doglover1",
+					password: "alpha",
+					image: "#",
+					dogtype: "terrier",
+					email: "doglover1@gmail.com",
 
-							ratings: [
-								{
-									placeid: "#",
-									value: 3
-								}
-							]
-						}
-					],
-					doglover2: [
+					ratings: [
 						{
-							userid: "doglover2",
-							password: "bravo",
-							image: "#",
-							dogtype: "bulldog",
-							email: "doglover2@gmail.com",
-							ratings: [
-								{
-									placeid: "#",
-									value: 4
-								}
-							]
+							placeid: "#",
+							value: 3
+						}
+					]
+				},
+				{
+					userid: "doglover2",
+					password: "bravo",
+					image: "#",
+					dogtype: "bulldog",
+					email: "doglover2@gmail.com",
+					ratings: [
+						{
+							placeid: "#",
+							value: 4
 						}
 					]
 				}
@@ -101,16 +96,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			loginUser: (username, pword) => {
 				const store = getStore();
-				let temp = [];
-				store.users.filter((name, index) => {
-					if (name === username && store.users[index].password === pword) {
-						temp.push(store.users[index]);
-						console.log("right password");
-					} else {
-						console.log("Wrong username/password");
-					}
+
+				store.users.map((name, index) => {
+					if (name.userid === username && name.password === pword) {
+						console.log("good"), setStore({ loggedInUser: name }), console.log(store.logge);
+					} else console.log("bad");
 				});
-				setStore({ loggedInUser: temp });
+			},
+			logout: () => {
+				setStore({ loggedInUser: [] });
 			}
 		}
 	};

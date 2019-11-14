@@ -15,7 +15,7 @@ export default class Details extends React.Component {
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
-					console.log(props.match);
+					console.log(this.props.match.params.theid);
 					return (
 						<div className="container">
 							<div className="jumbotron row">
@@ -64,7 +64,7 @@ export default class Details extends React.Component {
 									</a>
 								</div>
 								<div className="detailstext">
-									<h3>Hello</h3>
+									<h3>{store.locations[this.props.match.params.theid].title}</h3>
 									<h6>Details</h6>
 									<h4>
 										<span className="fa fa-star checked" />

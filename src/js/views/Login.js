@@ -25,29 +25,25 @@ export default class Login extends React.Component {
 										<h5 className="card-title">Login</h5>
 										<p>Username</p>
 										<input
-											onChange={e => this.setState({ username: e.target.value })}
 											type="username"
 											className="form-control"
 											placeholder="Username"
+											onChange={e => this.setState({ username: e.target.value })}
 										/>
 										<p> </p>
 										<p>Password</p>
 										<input
-											onChange={
-												(e => this.setState({ pword: e.target.value }),
-												console.log(this.state.pword))
-											}
 											type="Password"
 											className="form-control"
 											placeholder="Password"
+											onChange={e => this.setState({ pword: e.target.value })}
 										/>
-										<p> </p>
 										<Link to="/">
 											<button
 												href="#"
 												className="btn btn-primary"
 												onClick={() =>
-													actions.loginUser(this.state.pword, this.state.username)
+													actions.loginUser(this.state.username, this.state.pword)
 												}>
 												Login
 											</button>

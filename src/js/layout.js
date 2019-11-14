@@ -15,7 +15,7 @@ import Registration from "./views/Registration.js";
 import Ratings from "./views/Ratings.js";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import Navbar from "./component/navbar";
 import { Footer } from "./component/footer";
 
 //create your first component
