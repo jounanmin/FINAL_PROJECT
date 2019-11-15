@@ -62,6 +62,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			users: [
 				{
+					id: 0,
+					firstname: "John",
+					lastname: "Smith",
 					userid: "doglover1",
 					password: "alpha",
 					image: "#",
@@ -76,6 +79,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					]
 				},
 				{
+					id: 1,
+					firstname: "Jane",
+					lastname: "Doe",
 					userid: "doglover2",
 					password: "bravo",
 					image: "#",
@@ -105,6 +111,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			logout: () => {
 				setStore({ loggedInUser: [] });
+			},
+			editprofile: (firstname, lastname, email, username) => {
+				const store = getStore();
+				store.users.map((user, index) => {
+					if (user.id === store.loggedInUser.id) {
+						let editedStore = store.users
+							.slice(0, index)
+
+							.concat({
+								...store.users[index],
+								firstname,
+								email: email,
+								lastname: lastname,
+								username: username
+							})
+							.concat(store.users.slice(index + 1));
+						setStore({ users: editedStore });
+						setStore({ loggedInUser: store.users[index] });
+						console.log(store.users);
+					}
+				});
 			}
 		}
 	};

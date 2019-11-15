@@ -42,7 +42,7 @@ export default class Home extends React.Component {
 						} else
 							return (
 								<div>
-									{store.loggedInUser.userid}
+									Welcome, <Link to="/profile">{store.loggedInUser.firstname}</Link>
 									<br />
 									<button
 										onClick={() => actions.logout()}
