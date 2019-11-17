@@ -1,10 +1,8 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Card } from "../component/Card.js";
 import { MapTest } from "../component/mapTest.js";
 import { GoogleMap, LoadScript, MarkerClusterer, Marker } from "@react-google-maps/api";
-import { Consumer } from "../store/appContext";
 import { Context } from "../store/appContext";
 
 export default class Home extends React.Component {
@@ -48,7 +46,13 @@ export default class Home extends React.Component {
 												}}>
 												{clusterer =>
 													store.locations.map((name, index) => {
-														return name.location.map((location, i) => (
+														let delta = name.location;
+														let echo = null;
+														if (echo != null) {
+															let temp = name.filter(name.echo != true);
+														}
+
+														return delta.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
 																	this.setState({ showmodal: true });
@@ -74,6 +78,13 @@ export default class Home extends React.Component {
 							location={this.state.details.title}
 							address={this.state.details.address}
 							id={this.state.details.id}
+						/>
+						<i
+							className="fas fa-times x"
+							id={alpha}
+							onClick={() => {
+								this.setState({ showmodal: false });
+							}}
 						/>
 					</div>
 				</div>

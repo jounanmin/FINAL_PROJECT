@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "Impala Hotel",
 					address: "1228 Collins Ave, Miami Beach, FL, 33139",
 					placeid: "hotel1",
-					fenced: "no",
+					fenced: "yes",
 					id: 0,
 					location: [
 						{
@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					title: "The St. Regis Bal Harbour Resort",
 					placeid: "hotel2",
-					fenced: "yes",
+					fenced: "no",
 					id: 1,
 					location: [
 						{
@@ -70,7 +70,64 @@ const getState = ({ getStore, getActions, setStore }) => {
 					image: "#",
 					dogtype: "terrier",
 					email: "doglover1@gmail.com",
+					favorites: [
+						{
+							title: "Impala Hotel",
+							address: "1228 Collins Ave, Miami Beach, FL, 33139",
+							placeid: "hotel1",
+							fenced: "yes",
+							id: 0,
+							location: [
+								{
+									lat: 25.783416,
+									lng: -80.1336388
+								}
+							],
 
+							background: "white",
+							initial: "white",
+							places: [
+								{
+									name: "Impala Hotel,",
+									address: "1228 Collins Ave, Miami Beach, FL, 33139",
+									ratings: [
+										{
+											userid: "doglover1",
+											value: "3"
+										}
+									]
+								}
+							]
+						},
+						{
+							title: "The St. Regis Bal Harbour Resort",
+							placeid: "hotel2",
+							fenced: "no",
+							id: 1,
+							location: [
+								{
+									lat: 25.8888332,
+									lng: -80.124721
+								}
+							],
+
+							background: "white",
+							initial: "white",
+							address: "9703 Collins Avenue, Bal Harbour, FL, 33154",
+							places: [
+								{
+									name: "The St. Regis Bal Harbour Resort",
+									address: "9703 Collins Avenue, Bal Harbour, FL, 33154",
+									ratings: [
+										{
+											userid: "doglover2",
+											value: "4"
+										}
+									]
+								}
+							]
+						}
+					],
 					ratings: [
 						{
 							placeid: "#",
@@ -96,7 +153,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			loggedInUser: [],
-			modal: false
+			showmodal: false
 		},
 
 		actions: {

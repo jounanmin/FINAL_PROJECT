@@ -1,17 +1,21 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Consumer } from "../store/appContext";
+import { Consumer, Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+
+close = () => {
+	this.setState({ showmodal: false });
+};
 
 export const Card = props => (
 	<div className="container">
 		<div className="jumbotron row">
-			<Link to={`/details/${props.id}`}>
-				<div
-					id="carouselExampleControls"
-					className="carousel slide col-md-5 detailscarosuel"
-					data-ride="carousel">
+			<div
+				id="carouselExampleControls"
+				className="carousel slide col-md-5  col-sm-12 detailscarosuel"
+				data-ride="carousel">
+				<Link to={`/details/${props.id}`}>
 					<div className="carousel-inner">
 						<div className="carousel-item active">
 							<img
@@ -51,9 +55,10 @@ export const Card = props => (
 						<span className="carousel-control-next-icon" aria-hidden="true" />
 						<span className="sr-only">Next</span>
 					</a>
-				</div>
-			</Link>
-			<div className="detailstext">
+				</Link>
+			</div>
+
+			<div className="detailstext col-md-6 col-sm-10">
 				<h3>{props.location}</h3>
 				<h6>{props.address}</h6>
 			</div>
