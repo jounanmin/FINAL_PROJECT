@@ -10,7 +10,8 @@ export default class Home extends React.Component {
 		super();
 		this.state = {
 			showmodal: false,
-			details: []
+			details: [],
+			fenced: true
 		};
 	}
 	render() {
@@ -28,13 +29,13 @@ export default class Home extends React.Component {
 							<GoogleMap
 								id="circle-example"
 								mapContainerStyle={{
-									height: "675px",
+									height: "600px",
 									width: "100%"
 								}}
-								zoom={13}
+								zoom={12}
 								center={{
-									lat: 25.803516,
-									lng: -80.1336388
+									lat: 25.8450684,
+									lng: -80.1290947
 								}}>
 								<Context.Consumer>
 									{({ store, actions }) => {
@@ -46,13 +47,13 @@ export default class Home extends React.Component {
 												}}>
 												{clusterer =>
 													store.locations.map((name, index) => {
-														let delta = name.location;
-														let echo = null;
-														if (echo != null) {
-															let temp = name.filter(name.echo != true);
-														}
-
-														return delta.map((location, i) => (
+														let temp = name.location.filter(ele => {
+															if (this.state.fenced === true) {
+																return name.fenced;
+															}
+														});
+														console.log(temp, "temp");
+														return temp.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
 																	this.setState({ showmodal: true });

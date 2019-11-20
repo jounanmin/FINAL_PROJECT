@@ -6,14 +6,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "Impala Hotel",
 					address: "1228 Collins Ave, Miami Beach, FL, 33139",
 					placeid: "hotel1",
-					fenced: "yes",
+					fenced: true,
 					id: 0,
-					location: [
-						{
-							lat: 25.783416,
-							lng: -80.1336388
-						}
-					],
+					location: [{ lat: 25.783416, lng: -80.1336388 }],
 
 					background: "white",
 					initial: "white",
@@ -33,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					title: "The St. Regis Bal Harbour Resort",
 					placeid: "hotel2",
-					fenced: "no",
+					fenced: false,
 					id: 1,
 					location: [
 						{
