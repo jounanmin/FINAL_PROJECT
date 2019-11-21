@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 	}
 	render() {
 		return (
-			<nav className="navbar navbar-light bg-light mb-3">
+			<nav className="navbar navbar-light bg-light">
 				<Link to="/">
 					<div className="navbar-brand">Venture Hound</div>
 				</Link>
@@ -41,17 +41,16 @@ export default class Home extends React.Component {
 							);
 						} else
 							return (
-								<div>
+								<div className="out">
 									Welcome, <Link to="/profile">{store.loggedInUser.firstname}</Link>
-									<br />
-									<button
+									<h8
 										onClick={() => actions.logout()}
 										type="button"
 										className="btn btn-primary"
 										data-toggle="modal"
 										data-target="loginModal">
 										Log Out
-									</button>
+									</h8>
 								</div>
 							);
 					}}

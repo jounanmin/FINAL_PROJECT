@@ -11,16 +11,18 @@ export default class Home extends React.Component {
 		this.state = {
 			showmodal: false,
 			details: [],
-			fenced: true
+			fenced: false,
+			showfilter: false
 		};
 	}
 	render() {
 		let alpha = "hide";
+
 		if (this.state.showmodal === true) alpha = "show";
 		return (
-			<div className="container-fluid">
-				<div className="row">
-					<div className="map col-md-12">
+			<div className="container-fluid hundred">
+				<div className="row hundred">
+					<div className="map col-md-12 hundred">
 						<LoadScript
 							id="script-loader"
 							googleMapsApiKey="AIzaSyAPbZ3EPs3SxgQcrxmpO31bc8drIY7Ikeo"
@@ -29,7 +31,7 @@ export default class Home extends React.Component {
 							<GoogleMap
 								id="circle-example"
 								mapContainerStyle={{
-									height: "600px",
+									height: "91%",
 									width: "100%"
 								}}
 								zoom={12}
@@ -50,9 +52,9 @@ export default class Home extends React.Component {
 														let temp = name.location.filter(ele => {
 															if (this.state.fenced === true) {
 																return name.fenced;
-															}
+															} else return name;
 														});
-														console.log(temp, "temp");
+
 														return temp.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
@@ -84,10 +86,36 @@ export default class Home extends React.Component {
 							className="fas fa-times x"
 							id={alpha}
 							onClick={() => {
+								console.log(bravo);
 								this.setState({ showmodal: false });
+								console.log(bravo);
 							}}
 						/>
 					</div>
+					<Context.Consumer>
+						{({ store, actions }) => {
+							let bravo = "hidefilter";
+							if (store.filterbutton === true) {
+								bravo = "showfilter";
+							} else {
+								bravo = "hidefilter";
+							}
+							return (
+								<div className="filterbox" id={bravo}>
+									<button
+										onClick={() => {
+											if (this.state.fenced === false) {
+												this.setState({ fenced: true });
+												console.log(this.state.fenced);
+											} else {
+												this.setState({ fenced: false });
+											}
+										}}
+									/>
+								</div>
+							);
+						}}
+					</Context.Consumer>
 				</div>
 			</div>
 		);

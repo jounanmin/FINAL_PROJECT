@@ -62,8 +62,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					lastname: "Smith",
 					userid: "doglover1",
 					password: "alpha",
-					image: "#",
-					dogtype: "terrier",
+					//image: "#",
+					//dogtype: "terrier",
 					email: "doglover1@gmail.com",
 					favorites: [
 						{
@@ -136,8 +136,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					lastname: "Doe",
 					userid: "doglover2",
 					password: "bravo",
-					image: "#",
-					dogtype: "bulldog",
+					//image: "#",
+					//dogtype: "bulldog",
 					email: "doglover2@gmail.com",
 					ratings: [
 						{
@@ -148,7 +148,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			loggedInUser: [],
-			showmodal: false
+			showmodal: false,
+			filterbutton: false
 		},
 
 		actions: {
@@ -184,6 +185,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log(store.users);
 					}
 				});
+			},
+			filterbutton: () => {
+				let store = getStore();
+				if (store.filterbutton === false) {
+					setStore({ filterbutton: true });
+				} else setStore({ filterbutton: false });
 			}
 		}
 	};

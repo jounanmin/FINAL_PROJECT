@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../styles/home.scss";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Footer = () => (
 	<div className="card text-center fixed-bottom bg-light">
@@ -14,15 +15,22 @@ export const Footer = () => (
 						<span className="nav-link fas fa-paw" href="#" />
 					</li>
 				</Link>
-				<li className="nav-item">
-					<span
-						className="nav-link fas fa-map-pin "
-						data-toggle="dropdown"
-						aria-haspopup="true"
-						aria-expanded="false"
-						href="#"
-					/>
-				</li>
+				<Context.Consumer>
+					{({ store, actions }) => {
+						return (
+							<li className="nav-item">
+								<span
+									className="nav-link fas fa-map-pin "
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									href="#"
+									onClick={() => actions.filterbutton()}
+								/>
+							</li>
+						);
+					}}
+				</Context.Consumer>
 			</ul>
 		</div>
 	</div>
