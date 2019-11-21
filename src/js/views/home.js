@@ -17,7 +17,7 @@ export default class Home extends React.Component {
 	}
 	render() {
 		let alpha = "hide";
-
+		let clicked = "checked";
 		if (this.state.showmodal === true) alpha = "show";
 		return (
 			<div className="container-fluid hundred">
@@ -86,9 +86,7 @@ export default class Home extends React.Component {
 							className="fas fa-times x"
 							id={alpha}
 							onClick={() => {
-								console.log(bravo);
 								this.setState({ showmodal: false });
-								console.log(bravo);
 							}}
 						/>
 					</div>
@@ -101,17 +99,24 @@ export default class Home extends React.Component {
 								bravo = "hidefilter";
 							}
 							return (
-								<div className="filterbox" id={bravo}>
-									<button
-										onClick={() => {
-											if (this.state.fenced === false) {
-												this.setState({ fenced: true });
-												console.log(this.state.fenced);
-											} else {
-												this.setState({ fenced: false });
-											}
-										}}
-									/>
+								<div className="filterbox col-md-4 col-sm-2 col-xs-2" id={bravo}>
+									<label className="container">
+										Fenced
+										<input
+											type="checkbox"
+											onClick={() => {
+												if (this.state.fenced === false) {
+													this.setState({ fenced: true });
+												} else {
+													this.setState({ fenced: false });
+												}
+												if ((clicked = "checked")) {
+													clicked = "unchecked";
+												} else clicked = "checked";
+											}}
+										/>
+										<span className="checkmark" />
+									</label>
 								</div>
 							);
 						}}

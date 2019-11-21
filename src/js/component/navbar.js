@@ -19,7 +19,6 @@ export default class Home extends React.Component {
 				</Link>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						console.log(store.loggedInUser);
 						if (store.loggedInUser.length === 0) {
 							return (
 								<div className="Login">

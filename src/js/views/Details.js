@@ -15,7 +15,6 @@ export default class Details extends React.Component {
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
-					console.log(this.props.match.params.theid);
 					let locale = store.locations[this.props.match.params.theid];
 					if (store.loggedInUser.length < 1) {
 						return (
