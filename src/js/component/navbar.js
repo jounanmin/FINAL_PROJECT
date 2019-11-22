@@ -19,7 +19,6 @@ export default class Home extends React.Component {
 				</Link>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						console.log(store.loggedInUser);
 						if (store.loggedInUser.length === 0) {
 							return (
 								<div className="Login">
@@ -41,17 +40,16 @@ export default class Home extends React.Component {
 							);
 						} else
 							return (
-								<div>
+								<div className="out">
 									Welcome, <Link to="/profile">{store.loggedInUser.firstname}</Link>
-									<br />
-									<button
+									<h8
 										onClick={() => actions.logout()}
 										type="button"
 										className="btn btn-primary"
 										data-toggle="modal"
 										data-target="loginModal">
 										Log Out
-									</button>
+									</h8>
 								</div>
 							);
 					}}

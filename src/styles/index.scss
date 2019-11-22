@@ -2,22 +2,47 @@
     General Styles
 */
 .navbar{
-
+margin: 0px
 }
 body{
 
 
+}
+.hundred{
+    height: 100%
 }
 .map{
     width: 100%;
     height:100%;
     padding: 0px;
 }
+.out{
+    display: flex
+}
 .basicdetails{
     position: absolute;
     bottom: 6%;
     z-index: 3;
 }
+ .filterbox{
+    //  width: 33%;
+     height: 25%;
+     z-index: 4;
+     position: absolute;
+     right: 0%;
+     bottom: 0%;
+     
+     opacity: 0.8;
+     border-style: groove;
+     border-width: 0.5px;
+     background-color: lightgrey;
+ }
+ #hidefilter{
+ visibility: hidden
+ }
+ #showfilter{
+ visibility: visible
+ }
 .carousel{
     height: 100%
 }
@@ -29,8 +54,9 @@ body{
 }
 .x{
    position: absolute;
-    bottom: 30%;
-    left:88%;
+     top: 5%;
+     right:6%;
+    // left:88%;
     z-index: 3;
     font-size: 150%
 }

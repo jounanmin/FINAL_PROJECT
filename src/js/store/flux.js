@@ -6,14 +6,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "Impala Hotel",
 					address: "1228 Collins Ave, Miami Beach, FL, 33139",
 					placeid: "hotel1",
-					fenced: "yes",
+					fenced: true,
 					id: 0,
-					location: [
-						{
-							lat: 25.783416,
-							lng: -80.1336388
-						}
-					],
+					location: [{ lat: 25.783416, lng: -80.1336388 }],
 
 					background: "white",
 					initial: "white",
@@ -33,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					title: "The St. Regis Bal Harbour Resort",
 					placeid: "hotel2",
-					fenced: "no",
+					fenced: false,
 					id: 1,
 					location: [
 						{
@@ -67,8 +62,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					lastname: "Smith",
 					userid: "doglover1",
 					password: "alpha",
-					image: "#",
-					dogtype: "terrier",
+					//image: "#",
+					//dogtype: "terrier",
 					email: "doglover1@gmail.com",
 					favorites: [
 						{
@@ -141,8 +136,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					lastname: "Doe",
 					userid: "doglover2",
 					password: "bravo",
-					image: "#",
-					dogtype: "bulldog",
+					//image: "#",
+					//dogtype: "bulldog",
 					email: "doglover2@gmail.com",
 					ratings: [
 						{
@@ -153,7 +148,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			loggedInUser: [],
-			showmodal: false
+			showmodal: false,
+			filterbutton: false
 		},
 
 		actions: {
@@ -190,9 +186,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				});
 			},
+			filterbutton: () => {
+				let store = getStore();
+				if (store.filterbutton === false) {
+					setStore({ filterbutton: true });
+				} else setStore({ filterbutton: false });
+			},
 			fetchlocations: () => {
 				const store = getStore();
-				const url = "https://3000-c9583594-5276-4389-a803-7a1da07840d4.ws-us02.gitpod.io/location";
+				const url = "https://3000-c9583594-5276-4389-a803-7a1da07840d4.ws-us02.gitpod.io/";
 				let response1 = fetch(url, {
 					method: "Get"
 				})

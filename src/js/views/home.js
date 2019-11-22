@@ -10,7 +10,9 @@ export default class Home extends React.Component {
 		super();
 		this.state = {
 			showmodal: false,
-			details: []
+			details: [],
+			fenced: false,
+			showfilter: false
 		};
 	}
 	render() {
@@ -19,11 +21,12 @@ export default class Home extends React.Component {
 			lat: 25.803516,
 			lng: -80.1336388
 		};
+		let clicked = "checked";
 		if (this.state.showmodal === true) alpha = "show";
 		return (
-			<div className="container-fluid">
-				<div className="row">
-					<div className="map col-md-12">
+			<div className="container-fluid hundred">
+				<div className="row hundred">
+					<div className="map col-md-12 hundred">
 						<LoadScript
 							id="script-loader"
 							googleMapsApiKey="AIzaSyAPbZ3EPs3SxgQcrxmpO31bc8drIY7Ikeo"
@@ -32,13 +35,13 @@ export default class Home extends React.Component {
 							<GoogleMap
 								id="circle-example"
 								mapContainerStyle={{
-									height: "675px",
+									height: "91%",
 									width: "100%"
 								}}
-								zoom={13}
+								zoom={12}
 								center={{
-									lat: 25.803516,
-									lng: -80.1336388
+									lat: 25.8450684,
+									lng: -80.1290947
 								}}>
 								<Context.Consumer>
 									{({ store, actions }) => {
@@ -53,7 +56,7 @@ export default class Home extends React.Component {
 														let delta = [
 															{ lat: parseFloat(name.lat), lng: parseFloat(name.log) }
 														];
-
+														console.log(delta);
 														return delta.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
@@ -91,6 +94,37 @@ export default class Home extends React.Component {
 							}}
 						/>
 					</div>
+					<Context.Consumer>
+						{({ store, actions }) => {
+							let bravo = "hidefilter";
+							if (store.filterbutton === true) {
+								bravo = "showfilter";
+							} else {
+								bravo = "hidefilter";
+							}
+							return (
+								<div className="filterbox col-md-4 col-sm-2 col-xs-2" id={bravo}>
+									<label className="container">
+										Fenced
+										<input
+											type="checkbox"
+											onClick={() => {
+												if (this.state.fenced === false) {
+													this.setState({ fenced: true });
+												} else {
+													this.setState({ fenced: false });
+												}
+												if ((clicked = "checked")) {
+													clicked = "unchecked";
+												} else clicked = "checked";
+											}}
+										/>
+										<span className="checkmark" />
+									</label>
+								</div>
+							);
+						}}
+					</Context.Consumer>
 				</div>
 			</div>
 		);
