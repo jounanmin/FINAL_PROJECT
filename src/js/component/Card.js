@@ -15,7 +15,7 @@ export const Card = props => (
 				id="carouselExampleControls"
 				className="carousel slide col-md-5  col-sm-12 detailscarosuel"
 				data-ride="carousel">
-				<Link to={`/details/${props.id}`}>
+				<Link to={`/details/${props.id - 1}`}>
 					<div className="carousel-inner">
 						<div className="carousel-item active">
 							<img

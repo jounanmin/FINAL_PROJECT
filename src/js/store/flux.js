@@ -189,6 +189,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log(store.users);
 					}
 				});
+			},
+			fetchlocations: () => {
+				const store = getStore();
+				const url = "https://3000-c9583594-5276-4389-a803-7a1da07840d4.ws-us02.gitpod.io/location";
+				let response1 = fetch(url, {
+					method: "Get"
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(data => {
+						setStore({ locations: data });
+					});
 			}
 		}
 	};

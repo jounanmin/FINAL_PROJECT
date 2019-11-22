@@ -15,6 +15,10 @@ export default class Home extends React.Component {
 	}
 	render() {
 		let alpha = "hide";
+		let foxtrot = {
+			lat: 25.803516,
+			lng: -80.1336388
+		};
 		if (this.state.showmodal === true) alpha = "show";
 		return (
 			<div className="container-fluid">
@@ -46,17 +50,17 @@ export default class Home extends React.Component {
 												}}>
 												{clusterer =>
 													store.locations.map((name, index) => {
-														let delta = name.location;
-														let echo = null;
-														if (echo != null) {
-															let temp = name.filter(name.echo != true);
-														}
+														let delta = [
+															{ lat: parseFloat(name.lat), lng: parseFloat(name.log) }
+														];
 
 														return delta.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
 																	this.setState({ showmodal: true });
 																	this.setState({ details: name });
+																	console.log(location);
+																	foxtrot = location;
 																}}
 																key={i}
 																position={location}

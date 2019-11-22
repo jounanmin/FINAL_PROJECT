@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 	}
 	render() {
 		return (
-			<nav className="navbar navbar-light bg-light mb-3">
+			<nav className="navbar navbar-light bg-light">
 				<Link to="/">
 					<div className="navbar-brand">Venture Hound</div>
 				</Link>
