@@ -147,23 +147,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 					]
 				}
 			],
-			loggedInUser: [],
+			token: [],
 			showmodal: false,
-			filterbutton: false
+			filterbutton: false,
+			currentUser: []
 		},
 
 		actions: {
-			loginUser: (username, pword) => {
-				const store = getStore();
+			// loginUser: (username, pword) => {
+			// 	const store = getStore();
 
-				store.users.map((name, index) => {
-					if (name.userid === username && name.password === pword) {
-						console.log("good"), setStore({ loggedInUser: name }), console.log(store.logge);
-					} else console.log("bad");
-				});
+			// 	store.users.map((name, index) => {
+			// 		if (name.userid === username && name.password === pword) {
+			// 			console.log("good"), setStore({ loggedInUser: name }), console.log(store.logge);
+			// 		} else console.log("bad");
+			// 	});
+			// },
+			login: (username, pword) => {
+				fetch("https://3000-c9583594-5276-4389-a803-7a1da07840d4.ws-us02.gitpod.io/login", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						username: username,
+						password: pword
+					})
+				})
+					.then(response => response.json())
+					.then(token => {
+						if (typeof token.msg != "undefined") {
+							// Notify.error(token.msg);
+						} else {
+							setStore({ token: token.jwt, currentUser: token });
+							const store = getStore();
+							// history.push("/dashboard");
+						}
+					});
 			},
+
 			logout: () => {
-				setStore({ loggedInUser: [] });
+				setStore({ token: [] });
 			},
 			editprofile: (firstname, lastname, email, username) => {
 				const store = getStore();

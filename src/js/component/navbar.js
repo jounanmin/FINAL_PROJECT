@@ -19,7 +19,7 @@ export default class Home extends React.Component {
 				</Link>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						if (store.loggedInUser.length === 0) {
+						if (store.token.length === 0) {
 							return (
 								<div className="Login">
 									<Link to="/login">
@@ -41,7 +41,7 @@ export default class Home extends React.Component {
 						} else
 							return (
 								<div className="out">
-									Welcome, <Link to="/profile">{store.loggedInUser.firstname}</Link>
+									{/* Welcome, <Link to="/profile">{store.currentuser.name}</Link> */}
 									<h8
 										onClick={() => actions.logout()}
 										type="button"

@@ -53,6 +53,7 @@ export default class Home extends React.Component {
 												}}>
 												{clusterer =>
 													store.locations.map((name, index) => {
+														console.log("AGGHHHHHASCCC", store.token.length > 0);
 														let delta = [
 															{
 																lat: parseFloat(name.lat),
@@ -65,7 +66,7 @@ export default class Home extends React.Component {
 														// 	} else return name;
 														// });
 														// console.log(temp);
-														console.log(delta);
+
 														return delta.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
