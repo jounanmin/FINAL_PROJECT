@@ -54,16 +54,26 @@ export default class Home extends React.Component {
 												{clusterer =>
 													store.locations.map((name, index) => {
 														let delta = [
-															{ lat: parseFloat(name.lat), lng: parseFloat(name.log) }
+															{
+																lat: parseFloat(name.lat),
+																lng: parseFloat(name.log)
+															}
 														];
+														// let temp = name.delta.filter(ele => {
+														// 	if (this.state.fenced === true) {
+														// 		return name.fenced;
+														// 	} else return name;
+														// });
+														// console.log(temp);
 														console.log(delta);
 														return delta.map((location, i) => (
 															<Marker
 																onClick={Cluster => {
 																	this.setState({ showmodal: true });
 																	this.setState({ details: name });
-																	console.log(location);
+
 																	foxtrot = location;
+																	console.log(location);
 																}}
 																key={i}
 																position={location}
