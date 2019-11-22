@@ -56,6 +56,7 @@ export default class Home extends React.Component {
 														let delta = [
 															{ lat: parseFloat(name.lat), lng: parseFloat(name.log) }
 														];
+
 														console.log(delta);
 														return delta.map((location, i) => (
 															<Marker
