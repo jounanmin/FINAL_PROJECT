@@ -53,8 +53,12 @@ export default class Home extends React.Component {
 												}}>
 												{clusterer =>
 													store.locations.map((name, index) => {
+														console.log("AGGHHHHHASCCC", store.token.length > 0);
 														let delta = [
-															{ lat: parseFloat(name.lat), lng: parseFloat(name.log) }
+															{
+																lat: parseFloat(name.lat),
+																lng: parseFloat(name.log)
+															}
 														];
 
 														console.log(delta);
@@ -63,8 +67,9 @@ export default class Home extends React.Component {
 																onClick={Cluster => {
 																	this.setState({ showmodal: true });
 																	this.setState({ details: name });
-																	console.log(location);
+
 																	foxtrot = location;
+																	console.log(location);
 																}}
 																key={i}
 																position={location}

@@ -12,7 +12,7 @@ export default class Favorites extends React.Component {
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
-					if (store.loggedInUser.length < 1) {
+					if (store.currentUser.length < 1) {
 						return (
 							<div className="card">
 								<div className="card-body">
@@ -21,11 +21,11 @@ export default class Favorites extends React.Component {
 							</div>
 						);
 					} else
-						return store.loggedInUser.favorites.map((place, index) => {
+						return store.locations.map((place, index) => {
 							return (
 								<div className="container" key={index}>
-									<div className="jumbotron row">
-										<Link to={`/details/${place.id}`}>
+									<div className="jumbotron row picture">
+										<Link to={`/details/${place.id - 1}`}>
 											<div
 												id="carouselExampleControls"
 												className="carousel slide col-md-5  col-sm-12 detailscarosuel"
@@ -73,8 +73,8 @@ export default class Favorites extends React.Component {
 										</Link>
 
 										<div className="detailstext col-md-6 col-sm-10">
-											<h3>Name</h3>
-											<h6>Place</h6>
+											<h3>{store.locations[index].title}</h3>
+											<h6>{store.locations[index].address}</h6>
 										</div>
 									</div>
 								</div>

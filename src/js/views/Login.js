@@ -42,9 +42,7 @@ export default class Login extends React.Component {
 											<button
 												href="#"
 												className="btn btn-primary"
-												onClick={() =>
-													actions.loginUser(this.state.username, this.state.pword)
-												}>
+												onClick={() => actions.login(this.state.username, this.state.pword)}>
 												Login
 											</button>
 										</Link>
